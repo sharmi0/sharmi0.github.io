@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div class="logo-container">
+  <a href="/" class="logo-container">
+  <img src="/assets/images/logo.png" alt="Logo" class="site-logo">
+</a>
+
+</div>
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class = body-background>
+  {% include header.html %}
+  <main>
+    {{ content }}
+  </main>
+</body>
+</html>
+
+<div class="video-background">
+  <video autoplay loop muted playsinline>
+    <source src="/assets/videos/fishvideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+
+<main class="content-home">
+  <section class="hero-opaque" id="about">
+    <img src="/assets/images/headshot.jpg" alt="Your Name" class="hero-headshot" />
+
+    <div class="hero-blurb">
+      <h3>Sharmi Shah</h3>
+      <p>
+        Hello! I recently graduated with a Masters in Mechanical Engineering from MIT. <br> 
+        Here is a collection of my engineering projects, classes, and experiences, <br>many of which have been in robotics and particularly in sensing for robotics.  <br>
+        <br>
+        You'll also find some of the artwork I've created in the past, one of which is a mural in the tunnels beneath MIT!
+      </p>
+    </div>
+
+  <div class="hero-list">
+    ,<br class=",br.">
+    <h4>Recent updates</h4>
+    <div class="updates-wrapper">
+      <ul id="items-list">
+        <li>||[6/25]|| Began a research intern position at  <a href="https://sencilia.nl/" target="_blank" rel="noopener">Sencilia</a> in Groningen, Netherlands through MIT MISTI.</li>
+        <li>||[6/25]|| Graduated with a Masters in Mechanical Engineering from MIT.</li>
+        <li>||[9/24]|| Attended the first <a href="https://lasr.org/tspss2024" target="_blank" rel="noopener">Touch Sensing and Processing Summer School</a>!</li>
+        <li>||[3/24]|| Began work with London Imperial College on a new tactile sensor after recieving a collaboration grant.</li>
+        <li>||[9/23]|| Began Masters of Science in Mechanical Engineering and Research Assistant position in the Biomimetic Robotics Lab.</li>
+        <li>||[6/23]|| Graduated from MIT with a Bachelors in Mechanical Engineering.</li>
+      </ul>
+
+      <button id="toggle-items" aria-expanded="false" hidden>
+        (+ more)
+      </button>
+    </div>
+  </div>
+
+
+
+  </section>
+
+  <!-- Optional spacer to let the banner end and show more of the video -->
+  <div class="after-hero-spacer"></div>
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const list = document.getElementById('items-list');
+    const btn = document.getElementById('toggle-items');
+
+    if (!list || !btn) return;
+
+    const items = Array.from(list.querySelectorAll('li'));
+
+    if (items.length <= 3) return;
+
+    // Show top 3, hide rest
+    const toHide = items.slice(3);
+    toHide.forEach(li => li.classList.add('is-hidden'));
+
+    btn.hidden = false;
+
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+      if (expanded) {
+        toHide.forEach(li => li.classList.add('is-hidden'));
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '(+ more)';
+      } else {
+        toHide.forEach(li => li.classList.remove('is-hidden'));
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = '(– less)';
+      }
+    });
+  });
+</script>
