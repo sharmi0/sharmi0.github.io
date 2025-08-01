@@ -4,5 +4,7 @@ _site
 .jekyll-metadata
 vendor
 *.ai
+assets/images/frame*
+*.pptx
 
 Gemfile.lock

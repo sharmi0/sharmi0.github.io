@@ -1,9 +1,5 @@
 ---
-layout: default
+layout: art_home
 title: Art
 permalink: /art/
 ---
-
-# Art Portfolio
-
-Content coming soon...
