@@ -3,7 +3,7 @@ layout: portfolio_page
 title: Window Coatings Against Laser Surveillance
 date_range: "Jan 2023 – May 2024"
 tags: [testing]
-cover_image: /assets/images/laserstile.jpg
+cover_image: /assets/images/laserstile_temp.jpg
 ---
 
 <div class="project-detail">
