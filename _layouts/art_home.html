@@ -18,23 +18,91 @@
 
   <main>
     {{ content }}
-    <section class="art-gallery">
-      <div class="container">
-        <div class="art-grid">
-          {% for piece in site.art %}
-            <a href="{{ piece.external_url | default: piece.url | relative_url }}" class="art-tile" target="_blank">
-              {% if piece.cover_image %}
-                <img src="{{ piece.cover_image | relative_url }}" alt="{{ piece.title }}">
+      <section class="art-gallery">
+        <div class="container">
+          <div class="art-grid">
+            {% assign sorted_art = site.art | sort: "end_date" | reverse %}
+            {% for piece in sorted_art %}
+              {% if piece.external_url %}
+                <div class="art-tile" onclick="openVideoModal('{{ piece.external_url }}')">
+              {% else %}
+                <div class="art-tile" onclick="openImageModal('{{ piece.cover_image | relative_url }}')">
               {% endif %}
-              <div class="art-tile-overlay">
-                <h3>{{ piece.title }}</h3>
-                <p>{{ piece.short_description }}</p>
+
+                {% if piece.cover_image %}
+                  <img src="{{ piece.cover_image | relative_url }}" alt="{{ piece.title }}">
+                {% endif %}
+                <div class="art-tile-overlay">
+                  <h3>{{ piece.title }}</h3>
+                  <p>{{ piece.short_description }}</p>
+                </div>
               </div>
-            </a>
-          {% endfor %}
+            {% endfor %}
+          </div>
         </div>
+      </section>
+      <!-- Modal container -->
+
+
+
       </div>
     </section>
   </main>
-</body>
+
+  <div id="artModal" class="art-modal" onclick="closeModal(event)">
+  <span class="modal-close" onclick="closeModal(event)">&times;</span>
+  <div class="modal-content" id="modalContent"></div>
+</div>
+      <script>
+      function openImageModal(imageSrc) {
+        const modal = document.getElementById('artModal');
+        const content = document.getElementById('modalContent');
+        content.innerHTML = `<img src="${imageSrc}" alt="Artwork">`;
+        modal.style.display = 'flex';
+      }
+
+      function openVideoModal(videoUrl) {
+        const modal = document.getElementById('artModal');
+        const content = document.getElementById('modalContent');
+
+        // Convert YouTube link to embed format
+        const match = videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/);
+        let embedUrl = videoUrl;
+        if (match) {
+          embedUrl = `https://www.youtube.com/embed/${match[1]}?autoplay=1`;
+        }
+
+        content.innerHTML = `
+          <iframe width="960" height="540" 
+                  src="${embedUrl}" 
+                  frameborder="0" 
+                  allow="autoplay; encrypted-media" 
+                  allowfullscreen>
+          </iframe>`;
+        modal.style.display = 'flex';
+      }
+
+      function closeModal(event) {
+        const modal = document.getElementById('artModal');
+        const content = document.getElementById('modalContent');
+
+        // Only close if clicked outside the content or on the X
+        if (event.target.id === 'artModal' || event.target.classList.contains('modal-close')) {
+          modal.style.display = 'none';
+          content.innerHTML = '';
+        }
+      }
+
+      // Optional: close on Esc key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closeModal({ target: { id: 'artModal' } });
+        }
+      });
+      </script>
+
+  </body>
+
+
 </html>
+

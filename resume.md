@@ -1,9 +1,22 @@
 ---
-layout: default
-title: Resume
 permalink: /resume/
+layout: minimal
 ---
 
-# Resume
+<style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
 
-Content coming soon...
+<div>
+  <p><strong>in progress</strong></p>
+</div>

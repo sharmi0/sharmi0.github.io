@@ -1,28 +1,20 @@
 ---
 layout: portfolio_page
 title: WORMS Lunar Robot
-date_range: "Jan 2023 – May 2024"
+date_range: "Nov 2021 – Apr 2022" # junior fall - senior fall
+end_date: 2023-04-15  
 tags: [testing]
-cover_image: /assets/images/wormstile.png
+cover_image: /assets/images/portfoliotiles/wormstile.png
 ---
 
 <div class="project-detail">
   <h1 class="project-title">{{ page.title }}</h1>
   <p class="project-dates">{{ page.date_range }}</p>
 
-  <div class="project-section">
-    <img src="/assets/images/gripper-1.jpg" alt="Gripper prototype" class="project-image">
-    <p>Tactile sensors blah blah.</p>
-  </div>
+<div>
+  <p><strong>in progress</strong></p>
+</div>
 
-  <div class="project-section">
-    <iframe class="project-video" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-  </div>
-
-  <div class="project-section">
-    <img src="/assets/images/gripper-2.jpg" alt="Sensor layout" class="project-image">
-    <p>We used custom barometric sensor arrays inside the fingers to localize and measure grasp forces in real time.</p>
-  </div>
 
 </div>
 

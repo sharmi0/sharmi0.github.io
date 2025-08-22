@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: classes
 title: Classes
 permalink: /classes/
 ---

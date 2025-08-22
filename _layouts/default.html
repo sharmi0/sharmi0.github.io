@@ -23,18 +23,21 @@
   <section class="projects">
     <div class="container">
       <div class="grid">
-        {% for project in site.projects %}
-          <a href="{{ project.url | relative_url }}" class="tile">
-            {% if project.cover_image %}
-              <img src="{{ project.cover_image | relative_url }}" alt="{{ project.title }}">
-            {% endif %}
+        {% assign sorted_projects = site.projects | sort: "end_date" | reverse %}
 
-            <div class="tile-text">
-              <h3>{{ project.title }}</h3>
-              <p>{{ project.short_description }}</p>
-            </div>
-          </a>
-        {% endfor %}
+          {% for project in sorted_projects %}
+            <a href="{{ project.url | relative_url }}" class="tile">
+              {% if project.cover_image %}
+                <img src="{{ project.cover_image | relative_url }}" alt="{{ project.title }}">
+              {% endif %}
+
+              <div class="tile-text">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.date_range }}</p>
+              </div>
+            </a>
+          {% endfor %}
+
       </div>
     </div>
   </section>

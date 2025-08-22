@@ -1,6 +1,6 @@
 ---
-title: "Gina Rodriguez"
+title: "Gina Rodriguez portrait"
 cover_image: /assets/images/art/gina_rodriguez.jpg
 short_description: "pencil on paper"
-external_url: ""  # leave blank or link to YouTube/video if needed
+end_date: 2018-04-15  
 ---

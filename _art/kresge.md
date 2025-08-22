@@ -1,6 +1,6 @@
 ---
-title: "kresge from Maseeh, MIT"
+title: "Kresge viewed from Maseeh Hall, MIT"
 cover_image: /assets/images/art/kresge.jpg
 short_description: "erasure drawing, charcoal on paper"
-external_url: ""  # leave blank or link to YouTube/video if needed
+end_date: 2021-03-15  
 ---
