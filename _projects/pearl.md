@@ -67,7 +67,7 @@ cover_image: /assets/images/portfoliotiles/pearltile.gif
       </div>
       <div class="carousel-slide">
         <img src="/assets/images/pearl_content/PearlAbuild.jpg" alt="PEARL A Build Day" style="width: 80%;">
-        <div class="caption"><b>PEARL A Redployment.</b> This was build day for PEARL A, which was to be deployed at Pleasant Bay. Prior to build day, I had machined and procured replacement parts, and we had readied the pontoons and damping plate. It took 5 of us 7 hours to completely re-build PEARL's frame as many of the bolts had been rusted or stripped.</div>
+        <div class="caption"><b>PEARL A Redeployment.</b> This was build day for PEARL A, which was to be deployed at Pleasant Bay. Prior to build day, I had machined and procured replacement parts, and we had readied the pontoons and damping plate. It took 5 of us 7 hours to completely re-build PEARL's frame as many of the bolts had been rusted or stripped.</div>
       </div>
       <div class="carousel-slide">
         <img src="/assets/images/pearl_content/machining.png" alt="Machining Parts" style="width: 80%;">
