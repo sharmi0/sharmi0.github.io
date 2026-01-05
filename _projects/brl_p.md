@@ -22,7 +22,7 @@ cover_image: /assets/images/portfoliotiles/brltile.png
       <li>Deployed the models on the sensor’s integrated microcontroller, enabling light grasping and contact-based rolling estimation using a multi-dof robotic gripper.</li>
     </ul>
     <p>
-      This work was generalized across two sensor shapes - a sphere and ellipsoid. Adapting the work to the ellipsoid shape was notably more involved due to its lack of radial symmetry.
+      This work was generalized across two sensor shapes - a sphere and ellipsoid. Adapting the work to the ellipsoid shape was notably more involved due to its lack of radial symmetry. You can read more about this work in <a href="https://dspace.mit.edu/handle/1721.1/163574" target="_blank" rel="noopener">my thesis</a>.
     </p>
   </div>
 
